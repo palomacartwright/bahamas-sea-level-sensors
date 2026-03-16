@@ -2,18 +2,19 @@ project:
   type: website
 
 website:
-  title: "bahamas-sea-level-sensors"
+  title: "Bahamas Water Level Sensor Project"
   site-url: https://github.com/palomacartwright/bahamas-sea-level-sensors
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: about.qmd
+        text: About
       - href: data.qmd
         text: Data
       - href: sensors.qmd
         text: Sensors
-      - href: about.qmd
-        text: About
+     
 
 format:
   html:
