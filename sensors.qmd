@@ -1,3 +1,31 @@
 ---
-title: "Sensor Information"
+title: "Sensor Network"
+format: html 
 ---
+
+## Bahamas Sea Level Sensor Locations 
+
+```{python}
+import folium
+
+# Center of the Bahamas
+m = folium.Map(location=[24.5, -76.5], zoom_start=6)
+
+# Example sensor locations
+sensors = [
+    ("Nassau", 25.0443, -77.3504),
+    ("Freeport", 26.5285, -78.6954),
+    ("Exuma", 23.6190, -75.9695)
+]
+
+# Add markers
+for name, lat, lon in sensors:
+    folium.Marker(
+        location=[lat, lon],
+        popup=name,
+        tooltip=name
+    ).add_to(m)
+
+m
+```
+
