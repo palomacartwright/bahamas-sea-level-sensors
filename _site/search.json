@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "bahamas-sea-level-sensors",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "data-first-look.html",
+    "href": "data-first-look.html",
+    "title": "Bahamas Water Level Sensor Project",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the data\n# skiprows=600 ignores the first 600 lines\n# sep='\\t' assumes a tab separator; change to ',' if it's a true CSV\ndf = pd.read_csv(\n    'data-mar12.csv', \n    skiprows=600, \n    sep=',', \n    header=None, \n    names=['timestamp', 'value']\n)\n\n# Convert the timestamp column to actual datetime objects\ndf['timestamp'] = pd.to_datetime(df['timestamp'])\n\nprint(df.head())\n\n            timestamp   value\n0 2026-03-10 20:59:47  1735.0\n1 2026-03-10 20:59:48  1730.0\n2 2026-03-10 20:59:49  1740.0\n3 2026-03-10 20:59:50  5000.0\n4 2026-03-10 20:59:51  5000.0\n\n\n\n# 3. Create the plot\nplt.figure(figsize=(12, 6))\nplt.scatter(df['timestamp'], df['value'])\n\n# 4. Formatting the chart\nplt.title('Value vs Time')\nplt.xlabel('Timestamp')\nplt.ylabel('Value (mm)')\nplt.grid(True, linestyle='--', alpha=0.7)\n\n# Rotate date labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()\n\n# 5. Display the plot\nplt.show()"
+  },
+  {
+    "objectID": "sensors.html",
+    "href": "sensors.html",
+    "title": "Sensor Network",
+    "section": "",
+    "text": "import folium\n\n# Center of the Bahamas\nm = folium.Map(location=[24.5, -76.5], zoom_start=6)\n\n# Example sensor locations\nsensors = [\n    (\"Nassau\", 25.0443, -77.3504),\n    (\"Freeport\", 26.5285, -78.6954),\n    (\"Exuma\", 23.6190, -75.9695)\n]\n\n# Add markers\nfor name, lat, lon in sensors:\n    folium.Marker(\n        location=[lat, lon],\n        popup=name,\n        tooltip=name\n    ).add_to(m)\n\nm\n\n/Users/palomacartwright/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020\n  warnings.warn(\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+  },
+  {
+    "objectID": "sensors.html#bahamas-sea-level-sensor-locations",
+    "href": "sensors.html#bahamas-sea-level-sensor-locations",
+    "title": "Sensor Network",
+    "section": "",
+    "text": "import folium\n\n# Center of the Bahamas\nm = folium.Map(location=[24.5, -76.5], zoom_start=6)\n\n# Example sensor locations\nsensors = [\n    (\"Nassau\", 25.0443, -77.3504),\n    (\"Freeport\", 26.5285, -78.6954),\n    (\"Exuma\", 23.6190, -75.9695)\n]\n\n# Add markers\nfor name, lat, lon in sensors:\n    folium.Marker(\n        location=[lat, lon],\n        popup=name,\n        tooltip=name\n    ).add_to(m)\n\nm\n\n/Users/palomacartwright/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020\n  warnings.warn(\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
