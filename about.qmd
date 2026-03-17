@@ -2,4 +2,7 @@
 title: "About"
 ---
 
-About this site
+Add information about the sensors here. There should be info about the actual hardward, the data collection and metadata, the software used, the cloud. 
+
+There should also be information about the team and the project? But maybe that can go on the home page. 
+

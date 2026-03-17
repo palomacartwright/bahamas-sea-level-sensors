@@ -2,15 +2,14 @@
 title: "Sensor Network"
 format: html 
 execute:
-  echo: false
+    echo: false
+    message: false
+    warning: false
 ---
 
 ## Bahamas Sea Level Sensor Locations 
 
 ``` {r: map}
-#| echo: false
-#| message: false
-#| warning: false
 
 library(leaflet)
 
@@ -23,7 +22,6 @@ sensors <- data.frame(
 
 # Build map (NO pipes to avoid dependency issues)
 m <- leaflet()
-
 m <- addProviderTiles(m, providers$CartoDB.Positron)
 m <- setView(m, lng = -76.5, lat = 24.5, zoom = 6)
 

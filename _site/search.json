@@ -18,20 +18,20 @@
     "href": "sensors.html",
     "title": "Sensor Network",
     "section": "",
-    "text": "#| echo: false\n#| message: false\n#| warning: false\n\nlibrary(leaflet)\n\n# Define data\nsensors &lt;- data.frame(\n  name = c(\"Nassau\", \"Freeport\", \"Exuma\"),\n  lat = c(25.0443, 26.5285, 23.6190),\n  lon = c(-77.3504, -78.6954, -75.9695)\n)\n\n# Build map (NO pipes to avoid dependency issues)\nm &lt;- leaflet()\n\nm &lt;- addProviderTiles(m, providers$CartoDB.Positron)\nm &lt;- setView(m, lng = -76.5, lat = 24.5, zoom = 6)\n\nm &lt;- addMarkers(\n  m,\n  lng = sensors$lon,\n  lat = sensors$lat,\n  popup = sensors$name,\n  label = sensors$name\n)\n\nm"
+    "text": "library(leaflet)\n\n# Define data\nsensors &lt;- data.frame(\n  name = c(\"Nassau\", \"Freeport\", \"Exuma\"),\n  lat = c(25.0443, 26.5285, 23.6190),\n  lon = c(-77.3504, -78.6954, -75.9695)\n)\n\n# Build map (NO pipes to avoid dependency issues)\nm &lt;- leaflet()\n\nm &lt;- addProviderTiles(m, providers$CartoDB.Positron)\nm &lt;- setView(m, lng = -76.5, lat = 24.5, zoom = 6)\n\nm &lt;- addMarkers(\n  m,\n  lng = sensors$lon,\n  lat = sensors$lat,\n  popup = sensors$name,\n  label = sensors$name\n)\n\nm"
   },
   {
     "objectID": "sensors.html#bahamas-sea-level-sensor-locations",
     "href": "sensors.html#bahamas-sea-level-sensor-locations",
     "title": "Sensor Network",
     "section": "",
-    "text": "#| echo: false\n#| message: false\n#| warning: false\n\nlibrary(leaflet)\n\n# Define data\nsensors &lt;- data.frame(\n  name = c(\"Nassau\", \"Freeport\", \"Exuma\"),\n  lat = c(25.0443, 26.5285, 23.6190),\n  lon = c(-77.3504, -78.6954, -75.9695)\n)\n\n# Build map (NO pipes to avoid dependency issues)\nm &lt;- leaflet()\n\nm &lt;- addProviderTiles(m, providers$CartoDB.Positron)\nm &lt;- setView(m, lng = -76.5, lat = 24.5, zoom = 6)\n\nm &lt;- addMarkers(\n  m,\n  lng = sensors$lon,\n  lat = sensors$lat,\n  popup = sensors$name,\n  label = sensors$name\n)\n\nm"
+    "text": "library(leaflet)\n\n# Define data\nsensors &lt;- data.frame(\n  name = c(\"Nassau\", \"Freeport\", \"Exuma\"),\n  lat = c(25.0443, 26.5285, 23.6190),\n  lon = c(-77.3504, -78.6954, -75.9695)\n)\n\n# Build map (NO pipes to avoid dependency issues)\nm &lt;- leaflet()\n\nm &lt;- addProviderTiles(m, providers$CartoDB.Positron)\nm &lt;- setView(m, lng = -76.5, lat = 24.5, zoom = 6)\n\nm &lt;- addMarkers(\n  m,\n  lng = sensors$lon,\n  lat = sensors$lat,\n  popup = sensors$name,\n  label = sensors$name\n)\n\nm"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "Add information about the sensors here. There should be info about the actual hardward, the data collection and metadata, the software used, the cloud.\nThere should also be information about the team and the project? But maybe that can go on the home page."
   }
 ]
