@@ -70,6 +70,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -152,32 +164,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="bahamas-sea-level-sensor-locations" class="level2">
 <h2 class="anchored" data-anchor-id="bahamas-sea-level-sensor-locations">Bahamas Sea Level Sensor Locations</h2>
-<pre class="{r: map}"><code>
-library(leaflet)
-
-# Define data
-sensors &lt;- data.frame(
-  name = c("Nassau", "Freeport", "Exuma"),
-  lat = c(25.0443, 26.5285, 23.6190),
-  lon = c(-77.3504, -78.6954, -75.9695)
-)
-
-# Build map (NO pipes to avoid dependency issues)
-m &lt;- leaflet()
-
-m &lt;- addProviderTiles(m, providers$CartoDB.Positron)
-m &lt;- setView(m, lng = -76.5, lat = 24.5, zoom = 6)
-
-m &lt;- addMarkers(
-  m,
-  lng = sensors$lon,
-  lat = sensors$lat,
-  popup = sensors$name,
-  label = sensors$name
-)
-
-m
-</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-3d4495fe889a18098526" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-3d4495fe889a18098526">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[25.0443,26.5285,23.619],[-77.35039999999999,-78.69540000000001,-75.9695],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Nassau","Freeport","Exuma"],null,null,null,["Nassau","Freeport","Exuma"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[24.5,-76.5],6,[]],"limits":{"lat":[23.619,26.5285],"lng":[-78.69540000000001,-75.9695]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
 </section>
