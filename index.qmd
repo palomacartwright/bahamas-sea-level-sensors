@@ -1,7 +1,10 @@
 ---
-title: "bahamas-sea-level-sensors"
+title: "Bahamas Sea Level Sensor Network"
 ---
 
-This is a Quarto website.
+The Bahamas Sea Level Sensor Project aims to provide water level data throughout The Bahamas. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+
+
+This website is a work in progress and will continuously be updated throughout Spring and Summer 2026. Stay tuned for more information. 

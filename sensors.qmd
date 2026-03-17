@@ -1,31 +1,41 @@
 ---
 title: "Sensor Network"
 format: html 
+execute:
+  echo: false
 ---
 
 ## Bahamas Sea Level Sensor Locations 
 
-```{python}
-import folium
+``` {r: map}
+#| echo: false
+#| message: false
+#| warning: false
 
-# Center of the Bahamas
-m = folium.Map(location=[24.5, -76.5], zoom_start=6)
+library(leaflet)
 
-# Example sensor locations
-sensors = [
-    ("Nassau", 25.0443, -77.3504),
-    ("Freeport", 26.5285, -78.6954),
-    ("Exuma", 23.6190, -75.9695)
-]
+# Define data
+sensors <- data.frame(
+  name = c("Nassau", "Freeport", "Exuma"),
+  lat = c(25.0443, 26.5285, 23.6190),
+  lon = c(-77.3504, -78.6954, -75.9695)
+)
 
-# Add markers
-for name, lat, lon in sensors:
-    folium.Marker(
-        location=[lat, lon],
-        popup=name,
-        tooltip=name
-    ).add_to(m)
+# Build map (NO pipes to avoid dependency issues)
+m <- leaflet()
+
+m <- addProviderTiles(m, providers$CartoDB.Positron)
+m <- setView(m, lng = -76.5, lat = 24.5, zoom = 6)
+
+m <- addMarkers(
+  m,
+  lng = sensors$lon,
+  lat = sensors$lat,
+  popup = sensors$name,
+  label = sensors$name
+)
 
 m
+
 ```
 

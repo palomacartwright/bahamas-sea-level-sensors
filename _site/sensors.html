@@ -23,45 +23,10 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -105,9 +70,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -190,238 +152,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="bahamas-sea-level-sensor-locations" class="level2">
 <h2 class="anchored" data-anchor-id="bahamas-sea-level-sensor-locations">Bahamas Sea Level Sensor Locations</h2>
-<div id="52bb1720" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Center of the Bahamas</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> folium.Map(location<span class="op">=</span>[<span class="fl">24.5</span>, <span class="op">-</span><span class="fl">76.5</span>], zoom_start<span class="op">=</span><span class="dv">6</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Example sensor locations</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sensors <span class="op">=</span> [</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Nassau"</span>, <span class="fl">25.0443</span>, <span class="op">-</span><span class="fl">77.3504</span>),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Freeport"</span>, <span class="fl">26.5285</span>, <span class="op">-</span><span class="fl">78.6954</span>),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Exuma"</span>, <span class="fl">23.6190</span>, <span class="op">-</span><span class="fl">75.9695</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add markers</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, lat, lon <span class="kw">in</span> sensors:</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    folium.Marker(</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[lat, lon],</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        popup<span class="op">=</span>name,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        tooltip<span class="op">=</span>name</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    ).add_to(m)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/palomacartwright/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
-  warnings.warn(</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
-<html>
-<head>
-    
-    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
-    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
-    <script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;></script>
-    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
-    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
-    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
-    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
-    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/>
-    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
-    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
-    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
-    
-            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
-            <style>
-                #map_933cde15bb4c37f9fed9888edabfd8f1 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+<pre class="{r: map}"><code>#| echo: false
+#| message: false
+#| warning: false
 
-            <style>html, body {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            </style>
+library(leaflet)
 
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
+# Define data
+sensors &lt;- data.frame(
+  name = c("Nassau", "Freeport", "Exuma"),
+  lat = c(25.0443, 26.5285, 23.6190),
+  lon = c(-77.3504, -78.6954, -75.9695)
+)
 
-            <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-            </script>
+# Build map (NO pipes to avoid dependency issues)
+m &lt;- leaflet()
 
-        
-</head>
-<body>
-    
-    
-            <div class=&quot;folium-map&quot; id=&quot;map_933cde15bb4c37f9fed9888edabfd8f1&quot; ></div>
-        
-</body>
-<script>
-    
-    
-            var map_933cde15bb4c37f9fed9888edabfd8f1 = L.map(
-                &quot;map_933cde15bb4c37f9fed9888edabfd8f1&quot;,
-                {
-                    center: [24.5, -76.5],
-                    crs: L.CRS.EPSG3857,
-                    ...{
-  &quot;zoom&quot;: 6,
-  &quot;zoomControl&quot;: true,
-  &quot;preferCanvas&quot;: false,
-}
+m &lt;- addProviderTiles(m, providers$CartoDB.Positron)
+m &lt;- setView(m, lng = -76.5, lat = 24.5, zoom = 6)
 
-                }
-            );
+m &lt;- addMarkers(
+  m,
+  lng = sensors$lon,
+  lat = sensors$lat,
+  popup = sensors$name,
+  label = sensors$name
+)
 
-            
-
-        
-    
-            var tile_layer_c5c762eee6cafa45c8cbb83149fb1ee3 = L.tileLayer(
-                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
-                {
-  &quot;minZoom&quot;: 0,
-  &quot;maxZoom&quot;: 19,
-  &quot;maxNativeZoom&quot;: 19,
-  &quot;noWrap&quot;: false,
-  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
-  &quot;subdomains&quot;: &quot;abc&quot;,
-  &quot;detectRetina&quot;: false,
-  &quot;tms&quot;: false,
-  &quot;opacity&quot;: 1,
-}
-
-            );
-        
-    
-            tile_layer_c5c762eee6cafa45c8cbb83149fb1ee3.addTo(map_933cde15bb4c37f9fed9888edabfd8f1);
-        
-    
-            var marker_c188d49c22f6d6e09fdc62f3166e71f3 = L.marker(
-                [25.0443, -77.3504],
-                {
-}
-            ).addTo(map_933cde15bb4c37f9fed9888edabfd8f1);
-        
-    
-        var popup_b39b9196c54cc0fe24c532f9d907b7ed = L.popup({
-  &quot;maxWidth&quot;: &quot;100%&quot;,
-});
-
-        
-            
-                var html_d274b1bb24c512ffb25e5a97cc277a80 = $(`<div id=&quot;html_d274b1bb24c512ffb25e5a97cc277a80&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Nassau</div>`)[0];
-                popup_b39b9196c54cc0fe24c532f9d907b7ed.setContent(html_d274b1bb24c512ffb25e5a97cc277a80);
-            
-        
-
-        marker_c188d49c22f6d6e09fdc62f3166e71f3.bindPopup(popup_b39b9196c54cc0fe24c532f9d907b7ed)
-        ;
-
-        
-    
-    
-            marker_c188d49c22f6d6e09fdc62f3166e71f3.bindTooltip(
-                `<div>
-                     Nassau
-                 </div>`,
-                {
-  &quot;sticky&quot;: true,
-}
-            );
-        
-    
-            var marker_809da1a3c4743d28792a0b6c417f15e1 = L.marker(
-                [26.5285, -78.6954],
-                {
-}
-            ).addTo(map_933cde15bb4c37f9fed9888edabfd8f1);
-        
-    
-        var popup_197ef905592a9a37b06ed082623449c0 = L.popup({
-  &quot;maxWidth&quot;: &quot;100%&quot;,
-});
-
-        
-            
-                var html_0bc5a98fd348dd22d6e162dcfef2fda3 = $(`<div id=&quot;html_0bc5a98fd348dd22d6e162dcfef2fda3&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Freeport</div>`)[0];
-                popup_197ef905592a9a37b06ed082623449c0.setContent(html_0bc5a98fd348dd22d6e162dcfef2fda3);
-            
-        
-
-        marker_809da1a3c4743d28792a0b6c417f15e1.bindPopup(popup_197ef905592a9a37b06ed082623449c0)
-        ;
-
-        
-    
-    
-            marker_809da1a3c4743d28792a0b6c417f15e1.bindTooltip(
-                `<div>
-                     Freeport
-                 </div>`,
-                {
-  &quot;sticky&quot;: true,
-}
-            );
-        
-    
-            var marker_c645a754974704b5e97e3c400ee3f67b = L.marker(
-                [23.619, -75.9695],
-                {
-}
-            ).addTo(map_933cde15bb4c37f9fed9888edabfd8f1);
-        
-    
-        var popup_68667f6bc336401c5ea8c0d3e4d672fd = L.popup({
-  &quot;maxWidth&quot;: &quot;100%&quot;,
-});
-
-        
-            
-                var html_420a2e3a68a20cbaf0e1b8400fa2b25e = $(`<div id=&quot;html_420a2e3a68a20cbaf0e1b8400fa2b25e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Exuma</div>`)[0];
-                popup_68667f6bc336401c5ea8c0d3e4d672fd.setContent(html_420a2e3a68a20cbaf0e1b8400fa2b25e);
-            
-        
-
-        marker_c645a754974704b5e97e3c400ee3f67b.bindPopup(popup_68667f6bc336401c5ea8c0d3e4d672fd)
-        ;
-
-        
-    
-    
-            marker_c645a754974704b5e97e3c400ee3f67b.bindTooltip(
-                `<div>
-                     Exuma
-                 </div>`,
-                {
-  &quot;sticky&quot;: true,
-}
-            );
-        
-</script>
-</html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
-</div>
-</div>
+m
+</code></pre>
 
 
 </section>
