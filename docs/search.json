@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data Page",
+    "section": "",
+    "text": "This page will show all of the sensor live data and have available links for downloading the data. Not sure yet how I will implement that but it will all be here."
+  },
+  {
+    "objectID": "data.html#sensor-data",
+    "href": "data.html#sensor-data",
+    "title": "Data Page",
+    "section": "",
+    "text": "This page will show all of the sensor live data and have available links for downloading the data. Not sure yet how I will implement that but it will all be here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "The Bahamas Sea Level Sensor Project aims to provide water level data throughout The Bahamas.\nThis website is a work in progress and will continuously be updated throughout Spring and Summer 2026. Stay tuned for more infromation"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Home",
+    "section": "",
+    "text": "The Bahamas Sea Level Sensor Project aims to provide water level data throughout The Bahamas.\nThis website is a work in progress and will continuously be updated throughout Spring and Summer 2026. Stay tuned for more infromation"
+  },
+  {
+    "objectID": "index.html#about-the-team",
+    "href": "index.html#about-the-team",
+    "title": "Home",
+    "section": "About the Team",
+    "text": "About the Team\nAdd information about the team and how we did this.\nsome text"
+  },
+  {
+    "objectID": "sensors.html",
+    "href": "sensors.html",
+    "title": "Sensor Network",
+    "section": "",
+    "text": "This page will have information on the sensors, what islands they are on and the map that will have clickable links to the data page for each sensor."
+  },
+  {
+    "objectID": "sensors.html#bahamas-sea-level-sensor-locations",
+    "href": "sensors.html#bahamas-sea-level-sensor-locations",
+    "title": "Sensor Network",
+    "section": "",
+    "text": "This page will have information on the sensors, what islands they are on and the map that will have clickable links to the data page for each sensor."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Add information about the sensors here.\nThere should be info about the actual hardware."
+  },
+  {
+    "objectID": "about.html#information-about-the-sensors",
+    "href": "about.html#information-about-the-sensors",
+    "title": "About",
+    "section": "",
+    "text": "Add information about the sensors here.\nThere should be info about the actual hardware."
+  },
+  {
+    "objectID": "about.html#sensor-data-and-metadata-information",
+    "href": "about.html#sensor-data-and-metadata-information",
+    "title": "About",
+    "section": "Sensor Data and Metadata Information",
+    "text": "Sensor Data and Metadata Information\nThe data collection and metadata, the software used, the cloud."
+  },
+  {
+    "objectID": "about.html#funding-source-information",
+    "href": "about.html#funding-source-information",
+    "title": "About",
+    "section": "Funding source information?",
+    "text": "Funding source information?\nAdd info about the funding for the project"
+  }
+]
