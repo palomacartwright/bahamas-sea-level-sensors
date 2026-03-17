@@ -9,7 +9,10 @@ execute:
 
 ## Bahamas Sea Level Sensor Locations 
 
-```{r}
+This page will have information on the sensors, what islands they are on and  the map that will have clickable links to the data page for each sensor. 
+
+
+```{r map}
 library(leaflet)
 
 sensors <- data.frame(

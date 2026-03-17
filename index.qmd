@@ -1,10 +1,17 @@
 ---
-title: "Bahamas Sea Level Sensor Network"
+title: "Home"
+format: html
 ---
+
+## Introduction 
 
 The Bahamas Sea Level Sensor Project aims to provide water level data throughout The Bahamas. 
 
 
 
+This website is a work in progress and will continuously be updated throughout Spring and Summer 2026. Stay tuned for more infromation
 
-This website is a work in progress and will continuously be updated throughout Spring and Summer 2026. Stay tuned for more information. 
+## About the Team 
+
+
+Add information about the team and how we did this. 

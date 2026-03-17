@@ -3,7 +3,16 @@ title: "About"
 format: html
 ---
 
-Add information about the sensors here. There should be info about the actual hardward, the data collection and metadata, the software used, the cloud. 
+## Information about the Sensors 
+Add information about the sensors here.
 
-There should also be information about the team and the project? But maybe that can go on the home page. 
+ There should be info about the actual hardware. 
+ 
+## Sensor Data and Metadata Information 
+
+The data collection and metadata, the software used, the cloud. 
+
+## Funding source information? 
+
+Add info about the funding for the project 
 
